@@ -1,3 +1,10 @@
+"""
+All credit goes to
+https://stackoverflow.com/a/54196835/5997749
+
+i simply modified it to properly return and use ProcessPoolExecutor instead - laundmo
+"""
+
 import logging
 import queue
 import signal

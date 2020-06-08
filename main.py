@@ -2,7 +2,7 @@ from cactusheight import generate
 from stream_processor import stream_processor
 import itertools
 from tqdm import tqdm
-
+import numba
 chunk_size = 10
 
 def integers():

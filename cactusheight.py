@@ -1,4 +1,5 @@
 import jrand
+import numba
 
 class CactusSim:
     def __init__(self, count, floorLevel):
@@ -10,7 +11,8 @@ class CactusSim:
         self.currentHighestPos = 0
 
     def populate(self, seed):
-        random = jrand.Random(seed ^ 0x5DEECE66D)
+        jrand.set_seed(seed ^ 0x5DEECE66D)
+        random = jrand
 
         for i in range(self.count):
             initialPosX = random.nextInt(16) + 8
@@ -61,3 +63,5 @@ def generate(seed, floorlevel=63):
     test = CactusSim(desert, floorlevel)
     cactusheight = test.populate(seed)
     return cactusheight
+
+print("11", generate(34273655100497))

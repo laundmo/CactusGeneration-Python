@@ -11,6 +11,7 @@ import signal
 import sys
 import time
 from concurrent.futures import ProcessPoolExecutor, wait, ALL_COMPLETED
+import numba
 
 level = logging.DEBUG
 log = logging.getLogger(__name__)
@@ -31,7 +32,6 @@ class BufferedIter(object):
         for _ in range(n):
             vals.append(next(self.iter))
         return vals
-
 
 def stream_processor(input_stream, task, num_workers):
 
